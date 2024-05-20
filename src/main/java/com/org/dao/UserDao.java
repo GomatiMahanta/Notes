@@ -12,12 +12,14 @@ import com.org.dto.User;
 
 public class UserDao {
 	
-	public void saveAndUpdateUser(User user) {
+
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("karthik");
 		
 		EntityManager em = emf.createEntityManager();
 		
 		EntityTransaction et = em.getTransaction();
+		
+		public void saveAndUpdateUser(User user) {
 		
 		et.begin();
 		em.merge(user);
@@ -26,7 +28,8 @@ public class UserDao {
 		
 	}
 	
-	public void fetchUserById(int id){
+	public void fetchUserById(int id)
+	{
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("karthik");
 		
 		EntityManager em = emf.createEntityManager();
@@ -54,6 +57,11 @@ public class UserDao {
 		}
 		return users;
 		
+	}
+
+	public User fetchUserByEmailAndPassword(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
